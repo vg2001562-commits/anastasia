@@ -1,4 +1,4 @@
-<!-- portfolio.html - Обновленная страница с 5 алгоритмами -->
+<!-- portfolio.html - Визуализация алгоритмов -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -83,9 +83,28 @@
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1 {
@@ -94,191 +113,133 @@
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            margin-bottom: 0.5rem;
-            text-align: center;
+            margin-bottom: 1rem;
         }
 
-        .subtitle {
-            text-align: center;
+        /* Telegram Bot Card */
+        .telegram-card {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
             color: white;
-            margin-bottom: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+
+        .telegram-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .telegram-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .telegram-icon {
+            font-size: 2.5rem;
+            background: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #29a4e9 0%, #1f7ab3 100%);
+        }
+
+        .telegram-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .telegram-text p {
+            font-size: 0.85rem;
             opacity: 0.9;
         }
 
-        /* Сетка алгоритмов */
-        .algorithms-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .algo-card {
-            background: white;
-            border-radius: 20px;
-            padding: 1.5rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: fadeInUp 0.5s ease;
-        }
-
-        .algo-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .algo-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        .algo-icon {
-            font-size: 1.8rem;
-        }
-
-        .algo-title {
-            font-size: 1.5rem;
+        .telegram-button {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
             font-weight: bold;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .algo-description {
-            color: #64748b;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .array-display {
-            background: #f1f5f9;
-            border-radius: 12px;
-            padding: 1rem;
-            margin: 1rem 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-
-        .array-item {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 0.5rem 0.75rem;
-            border-radius: 8px;
-            font-weight: bold;
-            min-width: 45px;
-            text-align: center;
             transition: all 0.3s ease;
         }
 
-        .array-item.highlight {
-            background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
-            transform: scale(1.05);
+        .telegram-card:hover .telegram-button {
+            background: white;
+            color: #3498db;
         }
 
-        .controls {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin: 1rem 0;
+        .algo-section {
+            background: #f7fafc;
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
         }
 
         .btn {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            padding: 0.6rem 1.2rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 0.85rem;
+            margin: 0.5rem;
         }
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(135deg, #64748b 0%, #475569 100%);
-        }
-
-        .input-group {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-            flex-wrap: wrap;
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
         }
 
         input {
-            padding: 0.6rem 1rem;
+            padding: 0.75rem 1rem;
             border: 2px solid #e2e8f0;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 1rem;
+            margin: 0.5rem;
             outline: none;
-            transition: all 0.3s ease;
         }
 
         input:focus {
             border-color: #667eea;
         }
 
-        .result {
-            background: #fef3c7;
-            padding: 0.75rem;
+        .array-visualization {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .array-element {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            min-width: 60px;
+            text-align: center;
             border-radius: 10px;
-            margin-top: 0.75rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .message {
+            background: #fef3c7;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
             font-family: monospace;
-            font-size: 0.85rem;
-            color: #92400e;
-        }
-
-        .result.success {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        .result.error {
-            background: #fee2e2;
-            color: #991b1b;
-        }
-
-        @media (max-width: 1100px) {
-            .algorithms-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-link {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-            .algo-card {
-                padding: 1rem;
-            }
-            .array-item {
-                min-width: 35px;
-                font-size: 0.8rem;
-            }
         }
 
         footer {
@@ -286,6 +247,28 @@
             padding: 2rem;
             color: white;
             margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                padding: 1.5rem;
+            }
+            .array-element {
+                min-width: 45px;
+                font-size: 0.8rem;
+            }
+            .nav-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            .telegram-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            .telegram-info {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -302,91 +285,34 @@
     </nav>
 
     <div class="container">
-        <h1>🧩 Визуализация алгоритмов</h1>
-        <p class="subtitle">Наглядная демонстрация: Sort | Search | Filter | Fold (Reduce) | ForEach</p>
+        <div class="card">
+            <h1>🧩 Визуализация алгоритмов</h1>
+            <p>Наглядная демонстрация сортировки пузырьком и бинарного поиска</p>
 
-        <div class="algorithms-grid">
-            <!-- 1. SORT - Сортировка -->
-            <div class="algo-card">
-                <div class="algo-header">
-                    <span class="algo-icon">🔄</span>
-                    <span class="algo-title">Sort (Сортировка)</span>
-                </div>
-                <p class="algo-description">Сортировка пузырьком - пошаговая визуализация</p>
-                <div id="sortArray" class="array-display"></div>
-                <div class="controls">
-                    <button class="btn" onclick="runSort()">🔁 Запустить сортировку</button>
-                    <button class="btn btn-secondary" onclick="resetSortArray()">🔄 Сбросить</button>
-                </div>
-                <div id="sortResult" class="result">💡 Нажмите "Запустить сортировку"</div>
-            </div>
-
-            <!-- 2. SEARCH - Бинарный поиск -->
-            <div class="algo-card">
-                <div class="algo-header">
-                    <span class="algo-icon">🔍</span>
-                    <span class="algo-title">Search (Бинарный поиск)</span>
-                </div>
-                <p class="algo-description">Поиск элемента в отсортированном массиве</p>
-                <div id="searchArray" class="array-display"></div>
-                <div class="controls">
-                    <div class="input-group">
-                        <input type="number" id="searchTarget" placeholder="Число для поиска" value="42">
-                        <button class="btn" onclick="runSearch()">🔍 Найти</button>
+            <!-- Telegram Bot Ссылка -->
+            <a href="https://t.me/styling_manicure_bot" target="_blank" class="telegram-card">
+                <div class="telegram-info">
+                    <div class="telegram-icon">🤖</div>
+                    <div class="telegram-text">
+                        <h3>💅 Telegram-бот для подбора маникюра</h3>
+                        <p>Подберет идеальный стиль по длине, форме, цвету и поводу</p>
                     </div>
-                    <button class="btn btn-secondary" onclick="resetSearchArray()">🔄 Сбросить</button>
                 </div>
-                <div id="searchResult" class="result">💡 Введите число и нажмите "Найти"</div>
-            </div>
-
-            <!-- 3. FILTER - Фильтрация -->
-            <div class="algo-card">
-                <div class="algo-header">
-                    <span class="algo-icon">🎯</span>
-                    <span class="algo-title">Filter (Фильтрация)</span>
+                <div class="telegram-button">
+                    ➡️ Перейти в бота
                 </div>
-                <p class="algo-description">Фильтрация чисел по условию (больше порога)</p>
-                <div id="filterArray" class="array-display"></div>
-                <div class="controls">
-                    <div class="input-group">
-                        <input type="number" id="filterThreshold" placeholder="Порог (больше чем)" value="30">
-                        <button class="btn" onclick="runFilter()">🎯 Применить фильтр</button>
-                    </div>
-                    <button class="btn btn-secondary" onclick="resetFilterArray()">🔄 Сбросить</button>
+            </a>
+            
+            <div class="algo-section">
+                <div style="text-align: center; margin-bottom: 1rem;">
+                    <button class="btn" onclick="bubbleSort()">🔁 Сортировка пузырьком</button>
+                    <button class="btn" onclick="resetArray()">🔄 Сбросить массив</button>
+                    <input type="number" id="searchValue" placeholder="Число для поиска" value="42">
+                    <button class="btn" onclick="binarySearch()">🔍 Бинарный поиск</button>
                 </div>
-                <div id="filterResult" class="result">💡 Установите порог и нажмите "Применить фильтр"</div>
-            </div>
-
-            <!-- 4. FOLD (REDUCE) - Свертка -->
-            <div class="algo-card">
-                <div class="algo-header">
-                    <span class="algo-icon">📊</span>
-                    <span class="algo-title">Fold / Reduce (Свертка)</span>
-                </div>
-                <p class="algo-description">Сумма, произведение и другие агрегации массива</p>
-                <div id="foldArray" class="array-display"></div>
-                <div class="controls">
-                    <button class="btn" onclick="runSum()">➕ Сумма</button>
-                    <button class="btn" onclick="runProduct()">✖️ Произведение</button>
-                    <button class="btn" onclick="runMax()">📈 Максимум</button>
-                    <button class="btn btn-secondary" onclick="resetFoldArray()">🔄 Сбросить</button>
-                </div>
-                <div id="foldResult" class="result">💡 Нажмите любую кнопку для вычисления</div>
-            </div>
-
-            <!-- 5. FOREACH - Итерация -->
-            <div class="algo-card">
-                <div class="algo-header">
-                    <span class="algo-icon">🔄</span>
-                    <span class="algo-title">ForEach (Итерация)</span>
-                </div>
-                <p class="algo-description">Поэлементный обход массива с визуализацией</p>
-                <div id="foreachArray" class="array-display"></div>
-                <div class="controls">
-                    <button class="btn" onclick="runForEach()">▶️ Запустить итерацию</button>
-                    <button class="btn btn-secondary" onclick="resetForEachArray()">🔄 Сбросить</button>
-                </div>
-                <div id="foreachResult" class="result">💡 Нажмите "Запустить итерацию" для пошагового обхода</div>
+                
+                <div id="arrayDisplay" class="array-visualization"></div>
+                <div id="message" class="message">💡 Нажмите кнопку для запуска алгоритма</div>
             </div>
         </div>
     </div>
@@ -394,202 +320,113 @@
     <footer>© 2025 Анастасия | Современное портфолио | Пятигорск</footer>
 
     <script>
-        // ==================== ОБЩИЕ ДАННЫЕ ====================
-        // Исходные массивы для каждого алгоритма
-        let sortData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
-        let searchData = [4, 8, 9, 12, 17, 23, 31, 42, 55, 65]; // уже отсортирован
-        let filterData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
-        let foldData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
-        let foreachData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
-        
+        let array = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
         let sorting = false;
-        let foreachIterating = false;
-
-        // ==================== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ====================
-        function renderArray(containerId, data, highlightIndices = []) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
+        
+        function displayArray(highlight = []) {
+            const container = document.getElementById('arrayDisplay');
             container.innerHTML = '';
-            data.forEach((value, index) => {
+            array.forEach((value, index) => {
                 const element = document.createElement('div');
-                element.className = 'array-item';
+                element.className = 'array-element';
                 element.textContent = value;
-                if (highlightIndices.includes(index)) {
-                    element.classList.add('highlight');
+                if (highlight.includes(index)) {
+                    element.style.background = 'linear-gradient(135deg, #f59e0b 0%, #f97316 100%)';
+                    element.style.transform = 'scale(1.1)';
                 }
                 container.appendChild(element);
             });
         }
-
-        function renderAllArrays() {
-            renderArray('sortArray', sortData);
-            renderArray('searchArray', searchData);
-            renderArray('filterArray', filterData);
-            renderArray('foldArray', foldData);
-            renderArray('foreachArray', foreachData);
+        
+        function resetArray() {
+            if (sorting) return;
+            array = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
+            displayArray();
+            document.getElementById('message').innerHTML = '✅ Массив сброшен к исходному';
         }
-
-        // ==================== 1. SORT (Сортировка пузырьком) ====================
-        async function runSort() {
+        
+        async function bubbleSort() {
             if (sorting) {
-                document.getElementById('sortResult').innerHTML = '⏳ Сортировка уже выполняется...';
+                document.getElementById('message').innerHTML = '⏳ Сортировка уже выполняется...';
                 return;
             }
             sorting = true;
-            let arr = [...sortData];
-            const n = arr.length;
+            let arr = [...array];
             
-            for (let i = 0; i < n - 1; i++) {
-                for (let j = 0; j < n - i - 1; j++) {
+            for (let i = 0; i < arr.length - 1; i++) {
+                for (let j = 0; j < arr.length - i - 1; j++) {
                     if (arr[j] > arr[j + 1]) {
                         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-                        sortData = [...arr];
-                        renderArray('sortArray', sortData, [j, j + 1]);
-                        document.getElementById('sortResult').innerHTML = `🔄 Шаг: меняем ${arr[j+1]} и ${arr[j]}`;
+                        array = [...arr];
+                        displayArray([j, j + 1]);
+                        document.getElementById('message').innerHTML = `🔄 Меняем ${arr[j+1]} и ${arr[j]}`;
                         await new Promise(r => setTimeout(r, 300));
                     }
                 }
             }
             
-            renderArray('sortArray', sortData);
-            document.getElementById('sortResult').innerHTML = '✅ Сортировка завершена! Массив отсортирован по возрастанию.';
+            displayArray();
+            document.getElementById('message').innerHTML = '✅ Сортировка завершена! Массив отсортирован.';
             sorting = false;
         }
-
-        function resetSortArray() {
-            if (sorting) return;
-            sortData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
-            renderArray('sortArray', sortData);
-            document.getElementById('sortResult').innerHTML = '✅ Массив сброшен к исходному.';
-        }
-
-        // ==================== 2. SEARCH (Бинарный поиск) ====================
-        function runSearch() {
-            const target = parseInt(document.getElementById('searchTarget').value);
-            if (isNaN(target)) {
-                document.getElementById('searchResult').innerHTML = '❌ Введите число для поиска';
+        
+        function binarySearch() {
+            if (sorting) {
+                document.getElementById('message').innerHTML = '⏳ Дождитесь окончания сортировки';
                 return;
             }
             
-            let left = 0, right = searchData.length - 1;
-            let steps = [];
+            const target = parseInt(document.getElementById('searchValue').value);
+            if (isNaN(target)) {
+                document.getElementById('message').innerHTML = '❌ Введите число для поиска';
+                return;
+            }
             
-            while (left <= right) {
-                let mid = Math.floor((left + right) / 2);
-                steps.push({ left, right, mid, value: searchData[mid] });
-                
-                if (searchData[mid] === target) {
-                    renderArray('searchArray', searchData, [mid]);
-                    document.getElementById('searchResult').innerHTML = `✅ Элемент ${target} найден на позиции ${mid}!<br>🔍 Шагов: ${steps.length}`;
-                    return;
-                } else if (searchData[mid] < target) {
-                    left = mid + 1;
-                } else {
-                    right = mid - 1;
+            let isSorted = true;
+            for (let i = 0; i < array.length - 1; i++) {
+                if (array[i] > array[i + 1]) {
+                    isSorted = false;
+                    break;
                 }
             }
             
-            renderArray('searchArray', searchData);
-            document.getElementById('searchResult').innerHTML = `❌ Элемент ${target} не найден в массиве.<br>🔍 Шагов: ${steps.length}`;
-        }
-
-        function resetSearchArray() {
-            searchData = [4, 8, 9, 12, 17, 23, 31, 42, 55, 65];
-            renderArray('searchArray', searchData);
-            document.getElementById('searchResult').innerHTML = '✅ Массив сброшен.';
-            document.getElementById('searchTarget').value = '42';
-        }
-
-        // ==================== 3. FILTER (Фильтрация) ====================
-        function runFilter() {
-            const threshold = parseInt(document.getElementById('filterThreshold').value);
-            if (isNaN(threshold)) {
-                document.getElementById('filterResult').innerHTML = '❌ Введите порог';
+            if (!isSorted) {
+                document.getElementById('message').innerHTML = '⚠️ Массив не отсортирован! Сначала выполните сортировку.';
                 return;
             }
             
-            // Используем метод filter
-            const filtered = filterData.filter(num => num > threshold);
+            let left = 0, right = array.length - 1;
+            let found = false;
+            let steps = 0;
             
-            // Визуализируем исходный массив с подсветкой отфильтрованных
-            const highlightIndices = [];
-            filterData.forEach((num, idx) => {
-                if (num > threshold) highlightIndices.push(idx);
-            });
-            renderArray('filterArray', filterData, highlightIndices);
-            
-            document.getElementById('filterResult').innerHTML = `🎯 Фильтр: числа > ${threshold}<br>📊 Результат: [${filtered.join(', ')}]<br>✅ Найдено элементов: ${filtered.length}`;
-        }
-
-        function resetFilterArray() {
-            filterData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
-            renderArray('filterArray', filterData);
-            document.getElementById('filterResult').innerHTML = '✅ Массив сброшен.';
-            document.getElementById('filterThreshold').value = '30';
-        }
-
-        // ==================== 4. FOLD / REDUCE (Свертка) ====================
-        function runSum() {
-            // Используем reduce для суммы
-            const sum = foldData.reduce((acc, curr) => acc + curr, 0);
-            renderArray('foldArray', foldData);
-            document.getElementById('foldResult').innerHTML = `📊 Сумма всех элементов: <strong>${sum}</strong><br>🔢 Формула: ${foldData.join(' + ')} = ${sum}`;
-        }
-        
-        function runProduct() {
-            // Используем reduce для произведения
-            const product = foldData.reduce((acc, curr) => acc * curr, 1);
-            renderArray('foldArray', foldData);
-            document.getElementById('foldResult').innerHTML = `📊 Произведение всех элементов: <strong>${product.toLocaleString()}</strong><br>🔢 Формула: ${foldData.join(' × ')} = ${product.toLocaleString()}`;
-        }
-        
-        function runMax() {
-            // Используем reduce для поиска максимума
-            const max = foldData.reduce((acc, curr) => Math.max(acc, curr), -Infinity);
-            renderArray('foldArray', foldData);
-            document.getElementById('foldResult').innerHTML = `📊 Максимальный элемент: <strong>${max}</strong><br>🔍 Наибольшее число в массиве`;
-        }
-
-        function resetFoldArray() {
-            foldData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
-            renderArray('foldArray', foldData);
-            document.getElementById('foldResult').innerHTML = '✅ Массив сброшен.';
-        }
-
-        // ==================== 5. FOREACH (Итерация) ====================
-        async function runForEach() {
-            if (foreachIterating) {
-                document.getElementById('foreachResult').innerHTML = '⏳ Итерация уже выполняется...';
-                return;
-            }
-            foreachIterating = true;
-            const arr = [...foreachData];
-            
-            document.getElementById('foreachResult').innerHTML = '🔄 Начинаем обход массива...';
-            
-            // Используем forEach для итерации
-            let index = 0;
-            for (const value of arr) { // эмулируем forEach с задержкой
-                renderArray('foreachArray', foreachData, [index]);
-                document.getElementById('foreachResult').innerHTML = `📌 Шаг ${index + 1}: элемент [${index}] = ${value}<br>🔍 Итерация продолжается...`;
-                await new Promise(r => setTimeout(r, 500));
-                index++;
+            function searchStep() {
+                if (left > right) {
+                    document.getElementById('message').innerHTML = `❌ Элемент ${target} не найден в массиве. Шагов: ${steps}`;
+                    displayArray();
+                    return;
+                }
+                
+                steps++;
+                let mid = Math.floor((left + right) / 2);
+                displayArray([mid]);
+                
+                if (array[mid] === target) {
+                    document.getElementById('message').innerHTML = `✅ Элемент ${target} найден на позиции ${mid}! Шагов: ${steps}`;
+                } else if (array[mid] < target) {
+                    document.getElementById('message').innerHTML = `🔍 Шаг ${steps}: ищем в правой части... (${array[mid]} < ${target})`;
+                    left = mid + 1;
+                    setTimeout(searchStep, 500);
+                } else {
+                    document.getElementById('message').innerHTML = `🔍 Шаг ${steps}: ищем в левой части... (${array[mid]} > ${target})`;
+                    right = mid - 1;
+                    setTimeout(searchStep, 500);
+                }
             }
             
-            renderArray('foreachArray', foreachData);
-            document.getElementById('foreachResult').innerHTML = `✅ Итерация завершена!<br>📊 Массив содержит ${foreachData.length} элементов: [${foreachData.join(', ')}]<br>🔄 forEach обошел каждый элемент.`;
-            foreachIterating = false;
+            searchStep();
         }
-
-        function resetForEachArray() {
-            if (foreachIterating) return;
-            foreachData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
-            renderArray('foreachArray', foreachData);
-            document.getElementById('foreachResult').innerHTML = '✅ Массив сброшен.';
-        }
-
-        // Инициализация
-        renderAllArrays();
+        
+        displayArray();
     </script>
 </body>
 </html>
