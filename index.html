@@ -19,7 +19,6 @@
             min-height: 100vh;
         }
 
-        /* Анимированный фон */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -45,7 +44,6 @@
             100% { transform: translate(50px, 50px); }
         }
 
-        /* Навигация */
         .navbar {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
@@ -88,7 +86,6 @@
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
 
-        /* Основной контент */
         .container {
             max-width: 1200px;
             margin: 2rem auto;
@@ -142,7 +139,6 @@
             border-radius: 3px;
         }
 
-        /* Погодная карточка */
         .weather-card {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 20px;
@@ -171,6 +167,68 @@
             font-weight: bold;
         }
 
+        /* Telegram Bot Card */
+        .telegram-card {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+
+        .telegram-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .telegram-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .telegram-icon {
+            font-size: 2.5rem;
+            background: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #29a4e9 0%, #1f7ab3 100%);
+        }
+
+        .telegram-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .telegram-text p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .telegram-button {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .telegram-card:hover .telegram-button {
+            background: white;
+            color: #3498db;
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -188,6 +246,14 @@
             .nav-link {
                 padding: 0.5rem 1rem;
                 font-size: 0.9rem;
+            }
+            .telegram-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            .telegram-info {
+                flex-direction: column;
             }
         }
     </style>
@@ -223,6 +289,20 @@
                 <div>🌤️ Автообновление</div>
             </div>
 
+            <!-- Telegram Bot Ссылка -->
+            <a href="https://t.me/styling_manicure_bot" target="_blank" class="telegram-card">
+                <div class="telegram-info">
+                    <div class="telegram-icon">🤖</div>
+                    <div class="telegram-text">
+                        <h3>💅 Telegram-бот для подбора маникюра</h3>
+                        <p>Подберет идеальный стиль по длине, форме, цвету и поводу</p>
+                    </div>
+                </div>
+                <div class="telegram-button">
+                    ➡️ Перейти в бота
+                </div>
+            </a>
+
             <h2>⭐ О себе</h2>
             <p>Мне 19 лет, я активно развиваюсь в IT, решаю задачи на LeetCode и работаю над проектами. Сочетаю техническое мышление с творческим подходом.</p>
             
@@ -236,7 +316,6 @@
     <footer>© 2025 Анастасия | Современное портфолио | Пятигорск</footer>
 
     <script>
-        // Погода
         async function getWeather() {
             try {
                 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=44.041&longitude=43.059&current_weather=true&timezone=Europe/Moscow');
