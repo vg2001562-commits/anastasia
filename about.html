@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обо мне | Анастасия</title>
+    <title>Алгоритмы | Анастасия</title>
     <style>
         * {
             margin: 0;
@@ -82,28 +82,9 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 2rem auto;
             padding: 0 1rem;
-        }
-
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 0.6s ease;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         h1 {
@@ -112,9 +93,18 @@
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            margin-bottom: 1rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
         }
 
+        .subtitle {
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Telegram Bot Card */
         .telegram-card {
             background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             border-radius: 20px;
@@ -175,35 +165,160 @@
             color: #3498db;
         }
 
-        .info-grid {
+        /* Сетка алгоритмов */
+        .algorithms-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
             gap: 1.5rem;
-            margin: 2rem 0;
+            margin-bottom: 2rem;
         }
 
-        .skill-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        .algo-card {
+            background: white;
             border-radius: 20px;
             padding: 1.5rem;
-            transition: all 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.5s ease;
         }
 
-        .skill-card:hover {
+        .algo-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
 
-        .skill-icon {
-            font-size: 2.5rem;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .algo-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .algo-icon {
+            font-size: 1.8rem;
+        }
+
+        .algo-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .algo-description {
+            color: #64748b;
+            font-size: 0.9rem;
             margin-bottom: 1rem;
         }
 
-        .skill-title {
-            font-size: 1.3rem;
+        .array-display {
+            background: #f1f5f9;
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .array-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
             font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #2d3748;
+            min-width: 45px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .array-item.highlight {
+            background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+            transform: scale(1.05);
+        }
+
+        .controls {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+        }
+
+        .input-group {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        input {
+            padding: 0.6rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #667eea;
+        }
+
+        .result {
+            background: #fef3c7;
+            padding: 0.75rem;
+            border-radius: 10px;
+            margin-top: 0.75rem;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #92400e;
+        }
+
+        .result.success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .result.error {
+            background: #fee2e2;
+            color: #991b1b;
         }
 
         footer {
@@ -213,16 +328,23 @@
             margin-top: 2rem;
         }
 
+        @media (max-width: 1100px) {
+            .algorithms-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
-            .card {
-                padding: 1.5rem;
-            }
-            h1 {
-                font-size: 1.8rem;
-            }
             .nav-link {
                 padding: 0.5rem 1rem;
                 font-size: 0.9rem;
+            }
+            .algo-card {
+                padding: 1rem;
+            }
+            .array-item {
+                min-width: 35px;
+                font-size: 0.8rem;
             }
             .telegram-card {
                 flex-direction: column;
@@ -241,53 +363,297 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-link">🏠 Главная</a>
-            <a href="about.html" class="nav-link active">📄 Обо мне</a>
-            <a href="portfolio.html" class="nav-link">🧠 Алгоритмы</a>
+            <a href="about.html" class="nav-link">📄 Обо мне</a>
+            <a href="portfolio.html" class="nav-link active">🧠 Алгоритмы</a>
             <a href="leetcode.html" class="nav-link">⚡ LeetCode</a>
         </div>
     </nav>
 
     <div class="container">
-        <div class="card">
-            <h1>📋 Мои увлечения и опыт</h1>
+        <h1>🧩 Визуализация алгоритмов</h1>
+        <p class="subtitle">Наглядная демонстрация: Sort | Search | Filter | Fold (Reduce) | ForEach</p>
 
-            <a href="https://t.me/styling_manicure_bot" target="_blank" class="telegram-card">
-                <div class="telegram-info">
-                    <div class="telegram-icon">🤖</div>
-                    <div class="telegram-text">
-                        <h3>💅 Telegram-бот для подбора маникюра</h3>
-                        <p>Подберет идеальный стиль по длине, форме, цвету и поводу</p>
-                    </div>
-                </div>
-                <div class="telegram-button">➡️ Перейти в бота</div>
-            </a>
-            
-            <div class="info-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">⚽</div>
-                    <div class="skill-title">Футбол (3 месяца)</div>
-                    <p>Играла на позиции <strong>вратаря</strong> и <strong>защитника</strong>. Развила реакцию, тактическое мышление и командный дух.</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">🎨</div>
-                    <div class="skill-title">Рисование (1,5 года)</div>
-                    <p>Акварель, графика, digital-арт. Развила чувство композиции, внимательность к деталям и креативность.</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">🌟</div>
-                    <div class="skill-title">Активизм (5 лет)</div>
-                    <p>РСМ, РДДМ, Движение Первых. Организация мероприятий, волонтёрство, лидерские качества.</p>
+        <!-- Telegram Bot Ссылка -->
+        <a href="https://t.me/styling_manicure_bot" target="_blank" class="telegram-card">
+            <div class="telegram-info">
+                <div class="telegram-icon">🤖</div>
+                <div class="telegram-text">
+                    <h3>💅 Telegram-бот для подбора маникюра</h3>
+                    <p>Подберет идеальный стиль по длине, форме, цвету и поводу</p>
                 </div>
             </div>
-            
-            <div style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border-radius: 15px; padding: 1.5rem; margin-top: 1rem;">
-                <p>💡 <strong>Что мне это дало?</strong> Дисциплину от футбола, эстетический вкус от рисования и организаторские навыки от активистской деятельности. Эти качества помогают мне в программировании и учебе.</p>
+            <div class="telegram-button">➡️ Перейти в бота</div>
+        </a>
+
+        <div class="algorithms-grid">
+            <!-- 1. SORT - Сортировка пузырьком -->
+            <div class="algo-card">
+                <div class="algo-header">
+                    <span class="algo-icon">🔄</span>
+                    <span class="algo-title">Sort (Сортировка пузырьком)</span>
+                </div>
+                <p class="algo-description">Пошаговая визуализация сортировки пузырьком</p>
+                <div id="sortArray" class="array-display"></div>
+                <div class="controls">
+                    <button class="btn" onclick="runSort()">🔁 Запустить сортировку</button>
+                    <button class="btn btn-secondary" onclick="resetSortArray()">🔄 Сбросить</button>
+                </div>
+                <div id="sortResult" class="result">💡 Нажмите "Запустить сортировку"</div>
+            </div>
+
+            <!-- 2. SEARCH - Бинарный поиск -->
+            <div class="algo-card">
+                <div class="algo-header">
+                    <span class="algo-icon">🔍</span>
+                    <span class="algo-title">Search (Бинарный поиск)</span>
+                </div>
+                <p class="algo-description">Поиск элемента в отсортированном массиве</p>
+                <div id="searchArray" class="array-display"></div>
+                <div class="controls">
+                    <div class="input-group">
+                        <input type="number" id="searchTarget" placeholder="Число для поиска" value="42">
+                        <button class="btn" onclick="runSearch()">🔍 Найти</button>
+                    </div>
+                    <button class="btn btn-secondary" onclick="resetSearchArray()">🔄 Сбросить</button>
+                </div>
+                <div id="searchResult" class="result">💡 Введите число и нажмите "Найти"</div>
+            </div>
+
+            <!-- 3. FILTER - Фильтрация -->
+            <div class="algo-card">
+                <div class="algo-header">
+                    <span class="algo-icon">🎯</span>
+                    <span class="algo-title">Filter (Фильтрация)</span>
+                </div>
+                <p class="algo-description">Фильтрация чисел по условию (больше порога)</p>
+                <div id="filterArray" class="array-display"></div>
+                <div class="controls">
+                    <div class="input-group">
+                        <input type="number" id="filterThreshold" placeholder="Порог (больше чем)" value="30">
+                        <button class="btn" onclick="runFilter()">🎯 Применить фильтр</button>
+                    </div>
+                    <button class="btn btn-secondary" onclick="resetFilterArray()">🔄 Сбросить</button>
+                </div>
+                <div id="filterResult" class="result">💡 Установите порог и нажмите "Применить фильтр"</div>
+            </div>
+
+            <!-- 4. FOLD (REDUCE) - Свертка -->
+            <div class="algo-card">
+                <div class="algo-header">
+                    <span class="algo-icon">📊</span>
+                    <span class="algo-title">Fold / Reduce (Свертка)</span>
+                </div>
+                <p class="algo-description">Сумма, произведение и максимум массива</p>
+                <div id="foldArray" class="array-display"></div>
+                <div class="controls">
+                    <button class="btn" onclick="runSum()">➕ Сумма</button>
+                    <button class="btn" onclick="runProduct()">✖️ Произведение</button>
+                    <button class="btn" onclick="runMax()">📈 Максимум</button>
+                    <button class="btn btn-secondary" onclick="resetFoldArray()">🔄 Сбросить</button>
+                </div>
+                <div id="foldResult" class="result">💡 Нажмите любую кнопку для вычисления</div>
+            </div>
+
+            <!-- 5. FOREACH - Итерация -->
+            <div class="algo-card">
+                <div class="algo-header">
+                    <span class="algo-icon">🔄</span>
+                    <span class="algo-title">ForEach (Итерация)</span>
+                </div>
+                <p class="algo-description">Поэлементный обход массива с визуализацией</p>
+                <div id="foreachArray" class="array-display"></div>
+                <div class="controls">
+                    <button class="btn" onclick="runForEach()">▶️ Запустить итерацию</button>
+                    <button class="btn btn-secondary" onclick="resetForEachArray()">🔄 Сбросить</button>
+                </div>
+                <div id="foreachResult" class="result">💡 Нажмите "Запустить итерацию" для пошагового обхода</div>
             </div>
         </div>
     </div>
 
     <footer>© 2025 Анастасия | Современное портфолио | Пятигорск</footer>
+
+    <script>
+        // ==================== ОБЩИЕ ДАННЫЕ ====================
+        let sortData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
+        let searchData = [4, 8, 9, 12, 17, 23, 31, 42, 55, 65];
+        let filterData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
+        let foldData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
+        let foreachData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
+        
+        let sorting = false;
+        let foreachIterating = false;
+
+        function renderArray(containerId, data, highlightIndices = []) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            container.innerHTML = '';
+            data.forEach((value, index) => {
+                const element = document.createElement('div');
+                element.className = 'array-item';
+                element.textContent = value;
+                if (highlightIndices.includes(index)) {
+                    element.classList.add('highlight');
+                }
+                container.appendChild(element);
+            });
+        }
+
+        function renderAllArrays() {
+            renderArray('sortArray', sortData);
+            renderArray('searchArray', searchData);
+            renderArray('filterArray', filterData);
+            renderArray('foldArray', foldData);
+            renderArray('foreachArray', foreachData);
+        }
+
+        // ==================== 1. SORT ====================
+        async function runSort() {
+            if (sorting) {
+                document.getElementById('sortResult').innerHTML = '⏳ Сортировка уже выполняется...';
+                return;
+            }
+            sorting = true;
+            let arr = [...sortData];
+            
+            for (let i = 0; i < arr.length - 1; i++) {
+                for (let j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                        sortData = [...arr];
+                        renderArray('sortArray', sortData, [j, j + 1]);
+                        document.getElementById('sortResult').innerHTML = `🔄 Шаг: меняем ${arr[j+1]} и ${arr[j]}`;
+                        await new Promise(r => setTimeout(r, 300));
+                    }
+                }
+            }
+            renderArray('sortArray', sortData);
+            document.getElementById('sortResult').innerHTML = '✅ Сортировка завершена! Массив отсортирован.';
+            sorting = false;
+        }
+
+        function resetSortArray() {
+            if (sorting) return;
+            sortData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
+            renderArray('sortArray', sortData);
+            document.getElementById('sortResult').innerHTML = '✅ Массив сброшен к исходному.';
+        }
+
+        // ==================== 2. SEARCH ====================
+        function runSearch() {
+            const target = parseInt(document.getElementById('searchTarget').value);
+            if (isNaN(target)) {
+                document.getElementById('searchResult').innerHTML = '❌ Введите число для поиска';
+                return;
+            }
+            
+            let left = 0, right = searchData.length - 1;
+            let steps = [];
+            
+            while (left <= right) {
+                let mid = Math.floor((left + right) / 2);
+                steps.push({ left, right, mid, value: searchData[mid] });
+                
+                if (searchData[mid] === target) {
+                    renderArray('searchArray', searchData, [mid]);
+                    document.getElementById('searchResult').innerHTML = `✅ Элемент ${target} найден на позиции ${mid}!<br>🔍 Шагов: ${steps.length}`;
+                    return;
+                } else if (searchData[mid] < target) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+            renderArray('searchArray', searchData);
+            document.getElementById('searchResult').innerHTML = `❌ Элемент ${target} не найден.<br>🔍 Шагов: ${steps.length}`;
+        }
+
+        function resetSearchArray() {
+            searchData = [4, 8, 9, 12, 17, 23, 31, 42, 55, 65];
+            renderArray('searchArray', searchData);
+            document.getElementById('searchResult').innerHTML = '✅ Массив сброшен.';
+            document.getElementById('searchTarget').value = '42';
+        }
+
+        // ==================== 3. FILTER ====================
+        function runFilter() {
+            const threshold = parseInt(document.getElementById('filterThreshold').value);
+            if (isNaN(threshold)) {
+                document.getElementById('filterResult').innerHTML = '❌ Введите порог';
+                return;
+            }
+            
+            const filtered = filterData.filter(num => num > threshold);
+            const highlightIndices = [];
+            filterData.forEach((num, idx) => {
+                if (num > threshold) highlightIndices.push(idx);
+            });
+            renderArray('filterArray', filterData, highlightIndices);
+            document.getElementById('filterResult').innerHTML = `🎯 Фильтр: числа > ${threshold}<br>📊 Результат: [${filtered.join(', ')}]<br>✅ Найдено: ${filtered.length}`;
+        }
+
+        function resetFilterArray() {
+            filterData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
+            renderArray('filterArray', filterData);
+            document.getElementById('filterResult').innerHTML = '✅ Массив сброшен.';
+            document.getElementById('filterThreshold').value = '30';
+        }
+
+        // ==================== 4. FOLD / REDUCE ====================
+        function runSum() {
+            const sum = foldData.reduce((acc, curr) => acc + curr, 0);
+            renderArray('foldArray', foldData);
+            document.getElementById('foldResult').innerHTML = `📊 Сумма: <strong>${sum}</strong><br>🔢 ${foldData.join(' + ')} = ${sum}`;
+        }
+        
+        function runProduct() {
+            const product = foldData.reduce((acc, curr) => acc * curr, 1);
+            renderArray('foldArray', foldData);
+            document.getElementById('foldResult').innerHTML = `📊 Произведение: <strong>${product.toLocaleString()}</strong><br>🔢 ${foldData.join(' × ')} = ${product.toLocaleString()}`;
+        }
+        
+        function runMax() {
+            const max = foldData.reduce((acc, curr) => Math.max(acc, curr), -Infinity);
+            renderArray('foldArray', foldData);
+            document.getElementById('foldResult').innerHTML = `📊 Максимум: <strong>${max}</strong>`;
+        }
+
+        function resetFoldArray() {
+            foldData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
+            renderArray('foldArray', foldData);
+            document.getElementById('foldResult').innerHTML = '✅ Массив сброшен.';
+        }
+
+        // ==================== 5. FOREACH ====================
+        async function runForEach() {
+            if (foreachIterating) {
+                document.getElementById('foreachResult').innerHTML = '⏳ Итерация уже выполняется...';
+                return;
+            }
+            foreachIterating = true;
+            const arr = [...foreachData];
+            
+            document.getElementById('foreachResult').innerHTML = '🔄 Начинаем обход массива...';
+            
+            for (let index = 0; index < arr.length; index++) {
+                renderArray('foreachArray', foreachData, [index]);
+                document.getElementById('foreachResult').innerHTML = `📌 Шаг ${index + 1}: элемент [${index}] = ${arr[index]}`;
+                await new Promise(r => setTimeout(r, 500));
+            }
+            
+            renderArray('foreachArray', foreachData);
+            document.getElementById('foreachResult').innerHTML = `✅ Итерация завершена!<br>📊 Массив: [${foreachData.join(', ')}]`;
+            foreachIterating = false;
+        }
+
+        function resetForEachArray() {
+            if (foreachIterating) return;
+            foreachData = [42, 17, 8, 23, 65, 4, 31, 12, 55, 9];
+            renderArray('foreachArray', foreachData);
+            document.getElementById('foreachResult').innerHTML = '✅ Массив сброшен.';
+        }
+
+        renderAllArrays();
+    </script>
 </body>
 </html>
