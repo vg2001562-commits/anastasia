@@ -116,26 +116,69 @@
             margin-bottom: 1rem;
         }
 
-        h2 {
-            font-size: 1.8rem;
-            color: #2d3748;
-            margin: 1.5rem 0 1rem 0;
-            position: relative;
-            display: inline-block;
+        /* Telegram Bot Card */
+        .telegram-card {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
         }
 
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
+        .telegram-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .telegram-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .telegram-icon {
+            font-size: 2.5rem;
+            background: white;
             width: 60px;
-            height: 3px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 3px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #29a4e9 0%, #1f7ab3 100%);
         }
 
-        .skills-grid {
+        .telegram-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .telegram-text p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .telegram-button {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .telegram-card:hover .telegram-button {
+            background: white;
+            color: #3498db;
+        }
+
+        .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
@@ -185,6 +228,14 @@
                 padding: 0.5rem 1rem;
                 font-size: 0.9rem;
             }
+            .telegram-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            .telegram-info {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -203,33 +254,8 @@
     <div class="container">
         <div class="card">
             <h1>📋 Мои увлечения и опыт</h1>
-            
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">⚽</div>
-                    <div class="skill-title">Футбол (3 месяца)</div>
-                    <p>Играла на позиции <strong>вратаря</strong> и <strong>защитника</strong>. Развила реакцию, тактическое мышление и командный дух.</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">🎨</div>
-                    <div class="skill-title">Рисование (1,5 года)</div>
-                    <p>Акварель, графика, digital-арт. Развила чувство композиции, внимательность к деталям и креативность.</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">🌟</div>
-                    <div class="skill-title">Активизм (5 лет)</div>
-                    <p>РСМ, РДДМ, Движение Первых. Организация мероприятий, волонтёрство, лидерские качества.</p>
-                </div>
-            </div>
-            
-            <div style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border-radius: 15px; padding: 1.5rem; margin-top: 1rem;">
-                <p>💡 <strong>Что мне это дало?</strong> Дисциплину от футбола, эстетический вкус от рисования и организаторские навыки от активистской деятельности. Эти качества помогают мне в программировании и учебе.</p>
-            </div>
-        </div>
-    </div>
 
-    <footer>© 2025 Анастасия | Современное портфолио | Пятигорск</footer>
-</body>
-</html>
+            <!-- Telegram Bot Ссылка -->
+            <a href="https://t.me/styling_manicure_bot" target="_blank" class="telegram-card">
+                <div class="telegram-info">
+                    <div class="telegram-icon
